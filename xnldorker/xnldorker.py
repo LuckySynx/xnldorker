@@ -1041,7 +1041,7 @@ async def processOutput():
         appendedResults = False
         if args.output and not args.output_overwrite:
             try:
-                existingEndpoints = open(os.path.expanduser(args.output), "r")
+                existingEndpoints = open(os.path.expanduser(args.output), "r", encoding="U8")
                 appendedResults = True
                 for endpoint in existingEndpoints.readlines():
                     allEndpoints.add(endpoint.strip())
@@ -1060,7 +1060,7 @@ async def processOutput():
                 except Exception as e:
                     if verbose():
                         writerr(colored("ERROR processOutput 5: " + str(e), "red"))
-                outFile = open(os.path.expanduser(args.output), "w")
+                outFile = open(os.path.expanduser(args.output), "w", encoding="U8")
             except Exception as e:
                 if vverbose():
                     writerr(colored("ERROR processOutput 2: " + str(e), "red"))    
