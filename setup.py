@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     version=__import__('xnldorker').__version__,
     description="Run a dork on different search sites",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding='U8').read(),
     long_description_content_type='text/markdown',
     author="@xnl-h4ck3r",
     url="https://github.com/xnl-h4ck3r/xnldorker",
@@ -18,3 +18,4 @@ setup(
         ],
     },
 )
+
